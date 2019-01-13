@@ -1,0 +1,23 @@
+<% include ./partials/header.ejs%>
+<div class=" ui container segment"> 
+<%blogs.forEach(function(blog){%>
+    
+    <div class="ui items">
+         <div class="ui header"><%=blog.title%></div>
+         <a class="ui violet ribbon label"></a>
+        <div class="item">
+            <a class="ui small image"><img src="<%=blog.image%>"></a>
+        </div>
+        <div class="content">
+            <div class="description"><%=blog.body%></div>
+        </div>
+
+        <div class="item"><%=blog.created.toDateString()%></div>
+    </div>   
+    <a class="ui violet basic button" href="/blogs/<%=blog._id%>">Read more</a>
+    <div class="ui fitted divider"></div>
+    
+   
+<%})%>
+</div>
+<% include ./partials/footer.ejs%>
